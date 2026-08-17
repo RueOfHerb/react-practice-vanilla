@@ -1,4 +1,4 @@
-import type { Pokemon } from "../../types/pokemon";
+import type { Pokemon } from "../../types/Pokemon/pokemon";
 import TypeTag from "../TypeTag/TypeTag";
 import "./PokemonCard.css";
 
