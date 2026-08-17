@@ -1,7 +1,8 @@
+import type { PokemonTypeNames } from '../../types/Pokemon/pokemonTypes';
 import './TypeTag.css';
 
 type TypeTagProps = {
-  type: string;
+  type: PokemonTypeNames;
 };
 
 const TypeTag = ({ type }: TypeTagProps) => {

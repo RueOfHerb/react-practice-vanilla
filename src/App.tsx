@@ -13,7 +13,7 @@ const bulbasaur: Pokemon = {
 function App() {
 
   // Deliberately using the same Pokemon for testing purposes. In a real application, you would fetch different Pokemon data from an API or a database.
-  const [pokemon, ] = useState([bulbasaur, bulbasaur, bulbasaur, bulbasaur, bulbasaur, bulbasaur, bulbasaur, bulbasaur, bulbasaur, bulbasaur, bulbasaur, bulbasaur, bulbasaur, bulbasaur, bulbasaur, bulbasaur] as Pokemon[]);
+  const [pokemon, ] = useState<Pokemon[]>([bulbasaur, bulbasaur, bulbasaur, bulbasaur, bulbasaur, bulbasaur, bulbasaur, bulbasaur, bulbasaur, bulbasaur, bulbasaur, bulbasaur, bulbasaur, bulbasaur, bulbasaur, bulbasaur]);
 
   return (
     <>

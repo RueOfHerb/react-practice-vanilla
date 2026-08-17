@@ -1,0 +1,15 @@
+.button {
+  font-size: 16px;
+  padding: 5px 10px;
+  border-radius: 5px;
+  color: var(--blush-white);
+  background: var(--light-rose);
+  border: 2px solid var(--blush-pink);
+  margin-bottom: 24px;
+  cursor: pointer;
+
+  &:hover {
+    background-color: var(--blush-pink);
+    border-color: var(--blush-white);
+  }
+}
