@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import type { Pokemon } from './types/pokemon'
+import type { Pokemon } from './types/Pokemon/pokemon'
 import './App.css'
 import Button from './components/Button/Button';
 import PokemonCard from './components/PokemonCard/PokemonCard';
