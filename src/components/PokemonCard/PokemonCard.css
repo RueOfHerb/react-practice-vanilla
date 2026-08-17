@@ -1,0 +1,21 @@
+.pokemon-card {
+  border: 3px solid var(--blush-pink);
+  background: var(--light-rose);
+  border-radius: 8px;
+  padding: 16px;
+  text-align: center;
+
+  .pokemon-name {
+    text-transform: capitalize;
+  }
+
+  img {
+    background: var(--blush-white);
+    border-radius: 8px;
+  }
+
+  &:hover {
+    background-color: var(--blush-pink);
+    border-color: var(--blush-white);
+  }
+}
