@@ -1,0 +1,14 @@
+#pokemon-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: 25px;
+  padding: 25px;
+  background: var(--wine-shadow);
+  border-radius: 8px;
+}
+
+@media (min-width: 1600px) {
+  #pokemon-list {
+    grid-template-columns: repeat(6, 1fr);
+  }
+}

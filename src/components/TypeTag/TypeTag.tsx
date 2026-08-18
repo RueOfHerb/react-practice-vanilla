@@ -1,4 +1,4 @@
-import type { PokemonTypeNames } from '../../types/Pokemon/pokemonTypes';
+import type { PokemonTypeNames } from '../../types/pokemonTypes';
 import './TypeTag.css';
 
 type TypeTagProps = {
