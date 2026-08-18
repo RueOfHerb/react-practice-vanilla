@@ -11,8 +11,8 @@ const PokemonCard = ({ pokemon }: PokemonCardProps) => {
     <div className="pokemon-card">
       <h2 className="pokemon-name">{pokemon.name}</h2>
       <img src={pokemon.sprites.front_default} alt={pokemon.name} />
-      {pokemon.types.map((typeTag, index) => (
-        <TypeTag key={index} type={typeTag.type.name} />
+      {pokemon.types.map((typeTag) => (
+        <TypeTag key={pokemon.id + typeTag.type.name} type={typeTag.type.name} />
       ))}
     </div>
   );
