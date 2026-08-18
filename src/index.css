@@ -1,5 +1,5 @@
-@import './palette.css';
-@import './pokemonTypes.css';
+@import './styles/palette.css';
+@import './styles/pokemonTypes.css';
 
 :root {
   --shadow:
@@ -63,4 +63,19 @@ h2 {
 }
 p {
   margin: 0;
+}
+
+input {
+  background-color: var(--light-rose);
+  color: var(--blush-white);
+  border: 2px solid var(--blush-pink);
+
+  &:focus {
+    outline: none;
+    box-shadow: 0 0 5px var(--light-rose);
+  }
+
+  &::placeholder {
+    color: var(--blush-white);
+  }
 }
