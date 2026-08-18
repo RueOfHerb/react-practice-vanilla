@@ -5,6 +5,18 @@
   padding: 25px;
   background: var(--wine-shadow);
   border-radius: 8px;
+  transition: opacity 150ms ease;
+}
+
+/* Dim the stale results while a type change is still in flight. */
+#pokemon-list.is-pending {
+  opacity: 0.5;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  #pokemon-list {
+    transition: none;
+  }
 }
 
 @media (min-width: 1600px) {
