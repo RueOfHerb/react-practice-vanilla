@@ -5,6 +5,9 @@ import type { PokemonTypeNames } from "./types/pokemonTypes";
 import PokemonList from "./components/PokemonList/PokemonList";
 import SearchInput from "./components/SearchInput/SearchInput";
 import SearchType from "./components/SearchType/SearchType";
+import Modal from "./components/Modal/Modal";
+import type { Pokemon } from "./types/pokemon";
+import PokemonDetail from "./components/PokemonDetail/PokemonDetail";
 
 function App() {
   const { pokemon, loading, loadByType } = usePokemonList(151);
@@ -14,6 +17,8 @@ function App() {
     null
   );
   const [isPending, startTransition] = useTransition();
+  const [showModal, setShowModal] = useState(false);
+  const [selectedPokemon, setSelectedPokemon] = useState<Pokemon>();
 
   // deferredSearch lags behind search while React is busy, so the input stays
   // responsive even when re-filtering the list is slow.
@@ -32,6 +37,16 @@ function App() {
     });
   };
 
+  const handleDisplayingModal = (pokemon: Pokemon) => {
+    setSelectedPokemon(pokemon);
+    setShowModal(true);
+  }
+
+  const handleCloseModal = () => {
+    setShowModal(false);
+    setSelectedPokemon(undefined);
+  }
+
   return (
     <>
       <section id="pokedex-container">
@@ -49,10 +64,18 @@ function App() {
           pokemon={filtered}
           loading={loading}
           isPending={isPending}
+          onClick={handleDisplayingModal}
         />
       </section>
 
       <section id="spacer"></section>
+
+      {showModal && selectedPokemon && (
+        <Modal
+          element={<PokemonDetail pokemon={selectedPokemon} />}
+          onClose={handleCloseModal}
+        />
+      )}
     </>
   );
 }
