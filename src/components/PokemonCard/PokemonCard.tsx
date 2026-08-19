@@ -4,16 +4,19 @@ import "./PokemonCard.css";
 
 interface PokemonCardProps {
   pokemon: Pokemon;
+  onClick: (pokemon: Pokemon) => void;
 }
 
-const PokemonCard = ({ pokemon }: PokemonCardProps) => {
+const PokemonCard = ({ pokemon, onClick }: PokemonCardProps) => {
   return (
-    <div className="pokemon-card">
+    <div className="pokemon-card" onClick={() => onClick(pokemon)}>
       <h2 className="pokemon-name">{pokemon.name}</h2>
       <img src={pokemon.sprites.front_default} alt={pokemon.name} />
-      {pokemon.types.map((typeTag) => (
-        <TypeTag key={pokemon.id + typeTag.type.name} type={typeTag.type.name} />
-      ))}
+      <div className="pokemon-types">
+        {pokemon.types.map((typeTag) => (
+          <TypeTag key={pokemon.id + typeTag.type.name} type={typeTag.type.name} />
+        ))}
+      </div>
     </div>
   );
 };
